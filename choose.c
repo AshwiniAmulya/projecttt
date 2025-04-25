@@ -90,4 +90,14 @@ select {
     const courseDropdown = document.getElementById('courseDropdown');
     const selectedCourseDiv = document.getElementById('selectedCourse');
 
+function selectCourse(course) {
+      if (course) {
+        selectedCourseDiv.textContent = `You selected: ${course}`;
+        backButton.style.display = 'inline';
+      } else {
+        selectedCourseDiv.textContent = '';
+        backButton.style.display = 'none';
+      }
+    }
+
 
