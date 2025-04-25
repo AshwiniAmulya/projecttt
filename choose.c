@@ -27,4 +27,9 @@ body {
       display: flex;
       align-items: center;
     }
+ .navbar img {
+      height: 40px;
+      margin-right: 10px;      
+      border-radius: 50%;
+    }
 
