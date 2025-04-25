@@ -66,4 +66,11 @@ select {
   </style>
 </head>
 <body>
+<div class="navbar">
+    <h1>
+      <img src="C:\Users\HP\Documents\LOGO.jpg" alt=>
+      Edu Tracker
+    </h1>
+    <button class="back-button" id="backButton">⬅ Back</button>
+  </div>
 
