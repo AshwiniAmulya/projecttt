@@ -59,4 +59,11 @@ select {
       width: 250px;
       text-align: center;
     }
+ .selected-course {
+      margin-top: 2rem;
+      font-size: 1.2rem;
+    }
+  </style>
+</head>
+<body>
 
