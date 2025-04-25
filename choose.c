@@ -14,4 +14,12 @@ body {
       flex-direction: column;
       min-height: 100vh;
     }
+.navbar {
+      background-color: #1e40af;
+      color: white;
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
