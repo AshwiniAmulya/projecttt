@@ -22,4 +22,9 @@ body {
       justify-content: space-between;
       align-items: center;
     }
+.navbar h1 {
+      margin: 0;
+      display: flex;
+      align-items: center;
+    }
 
