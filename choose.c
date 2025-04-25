@@ -32,4 +32,12 @@ body {
       margin-right: 10px;      
       border-radius: 50%;
     }
+.back-button {
+background: none;
+border: none;
+color: white;
+font-size: 1rem;
+cursor: pointer;
+display: none;
+}
 
