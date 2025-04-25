@@ -40,4 +40,12 @@ font-size: 1rem;
 cursor: pointer;
 display: none;
 }
+.container {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
 
