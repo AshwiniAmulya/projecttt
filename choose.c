@@ -48,4 +48,15 @@ display: none;
       justify-content: center;
       padding: 2rem;
     }
+select {
+      padding: 1rem;
+      font-size: 1rem;
+      border: 2px solid #1e3a8a;
+      border-radius: 5px;
+      background-color: white;
+      color: #1e3a8a;
+      margin-top: 1rem;
+      width: 250px;
+      text-align: center;
+    }
 
