@@ -83,3 +83,7 @@ select {
       <option value="BCA">BCA</option>
       <option value="BIO.TECH">BIO.TECH</option>
     </select>
+     <div class="selected-course" id="selectedCourse"></div>
+  </div>
+
+
