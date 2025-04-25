@@ -77,4 +77,9 @@ select {
     <h2>Choose Course</h2>
     <select id="courseDropdown" onchange="selectCourse(this.value)">
       <option value="">-- Select a course --</option>
-
+<option value="CSE">CSE</option>
+      <option value="ECE">ECE</option>
+      <option value="AIML">AIML</option>
+      <option value="BCA">BCA</option>
+      <option value="BIO.TECH">BIO.TECH</option>
+    </select>
