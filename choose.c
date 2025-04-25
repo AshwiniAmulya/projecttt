@@ -73,4 +73,8 @@ select {
     </h1>
     <button class="back-button" id="backButton">⬅ Back</button>
   </div>
+<div class="container">
+    <h2>Choose Course</h2>
+    <select id="courseDropdown" onchange="selectCourse(this.value)">
+      <option value="">-- Select a course --</option>
 
