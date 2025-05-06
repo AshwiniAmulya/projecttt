@@ -195,6 +195,81 @@
       "Seminar": "Presentation and communication of a technical topic.",
       "Placement Preparation": "Aptitude, coding interviews, mock tests, soft skills."
     };
+const referenceNotes = {
+      "Introduction to Programming": "Reference: C Programming by Dennis Ritchie, Python Crash Course by Eric Matthes.",
+      "Mathematics I": "Topics: Matrix Algebra, Limits, Derivatives, Integrals. Book: Higher Engineering Mathematics by B.S. Grewal.",
+      "Data Structures": "Use GeeksforGeeks, NPTEL lectures, and the book by Seymour Lipschutz.",
+      "Operating Systems": "Silberschatz book, Neso Academy videos.",
+      "Machine Learning": "Andrew Ng's Coursera course, and Hands-On ML with Scikit-Learn.",
+      "Web Development": "MDN Docs, FreeCodeCamp, HTML/CSS/JS projects.",
+    };
+
+    const studyPlan = {
+      "Semester 1": ["Introduction to Programming", "Mathematics I", "Basic Electronics", "Environmental Science"],
+      "Semester 2": ["Data Structures", "Mathematics II", "Digital Logic", "Computer Organization"],
+      "Semester 3": ["OOPs using C++/Java", "Operating Systems", "Discrete Mathematics", "Database Management Systems"],
+      "Semester 4": ["Design and Analysis of Algorithms", "Computer Networks", "Software Engineering", "Web Development"],
+      "Semester 5": ["Artificial Intelligence", "Machine Learning", "Compiler Design", "Cloud Computing"],
+      "Semester 6": ["Data Science", "Internet of Things", "Cybersecurity", "Mini Projects"],
+      "Semester 7": ["Internship", "Research Paper Writing", "Electives based on Interest"],
+      "Semester 8": ["Major Project", "Seminar", "Placement Preparation"]
+    };
+
+    const container = document.getElementById("studyPlan");
+
+    for (let semester in studyPlan) {
+      const table = document.createElement("table");
+      const thead = document.createElement("thead");
+      thead.innerHTML = `<tr><th colspan="3">${semester}</th></tr><tr><th>Done</th><th>Topic</th><th>Brief Concept</th></tr>`;
+      table.appendChild(thead);
+
+      const tbody = document.createElement("tbody");
+      studyPlan[semester].forEach(topic => {
+        const tr = document.createElement("tr");
+
+        const tdCheck = document.createElement("td");
+        const checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.id = topic;
+        tdCheck.appendChild(checkbox);
+
+        const tdTopic = document.createElement("td");
+        const label = document.createElement("label");
+        label.htmlFor = topic;
+        label.innerText = topic;
+        tdTopic.appendChild(label);
+
+        const tdDetail = document.createElement("td");
+        const link = document.createElement("span");
+        link.className = "detail-link";
+        link.innerText = topicDetails[topic] || "Details coming soon.";
+        link.onclick = () => {
+          document.getElementById("modalTitle").innerText = topic;
+          document.getElementById("modalContent").innerText = referenceNotes[topic] || "Detailed explanation and reference notes coming soon.";
+          document.getElementById("conceptModal").style.display = "block";
+        };
+        tdDetail.appendChild(link);
+
+        tr.appendChild(tdCheck);
+        tr.appendChild(tdTopic);
+        tr.appendChild(tdDetail);
+
+        tbody.appendChild(tr);
+      });
+
+      table.appendChild(tbody);
+      container.appendChild(table);
+    }
+
+    window.onclick = function(event) {
+      const modal = document.getElementById("conceptModal");
+      if (event.target === modal) {
+        modal.style.display = "none";
+      }
+    };
+  </script>
+</body>
+</html>
 
 
 
