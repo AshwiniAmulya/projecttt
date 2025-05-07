@@ -175,4 +175,66 @@
       "Semester 7": ["Advanced Topics in AI", "AI Research Paper Review", "Data Privacy & Security"],
       "Semester 8": ["Capstone Project", "Product Development", "Startup & Innovation"]
     };
+  const container = document.getElementById("studyPlan");
+
+    for (let semester in studyPlan) {
+      const table = document.createElement("table");
+      const thead = document.createElement("thead");
+      thead.innerHTML = `<tr><th colspan="3">${semester}</th></tr><tr><th>Done</th><th>Topic</th><th>Brief Concept</th></tr>`;
+      table.appendChild(thead);
+
+      const tbody = document.createElement("tbody");
+      studyPlan[semester].forEach(topic => {
+        const tr = document.createElement("tr");
+
+        const tdCheck = document.createElement("td");
+        const checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.id = topic;
+        tdCheck.appendChild(checkbox);
+
+        const tdTopic = document.createElement("td");
+        const label = document.createElement("label");
+        label.htmlFor = topic;
+        label.innerText = topic;
+        tdTopic.appendChild(label);
+
+        const tdDetail = document.createElement("td");
+        const link = document.createElement("span");
+        link.className = "detail-link";
+        link.innerText = topicDetails[topic] || "Details coming soon.";
+        link.onclick = () => {
+          document.getElementById("modalTitle").innerText = topic;
+          document.getElementById("modalContent").innerText = referenceNotes[topic] || "Detailed explanation and reference notes coming soon.";
+          document.getElementById("conceptModal").style.display = "block";
+        };
+        tdDetail.appendChild(link);
+
+        tr.appendChild(tdCheck);
+        tr.appendChild(tdTopic);
+        tr.appendChild(tdDetail);
+
+        tbody.appendChild(tr);
+      });
+
+      table.appendChild(tbody);
+      container.appendChild(table);
+    }
+
+    window.onclick = function(event) {
+      const conceptModal = document.getElementById("conceptModal");
+      const youtubeModal = document.getElementById("youtubeModal");
+      if (event.target === conceptModal) {
+        conceptModal.style.display = "none";
+      } else if (event.target === youtubeModal) {
+        youtubeModal.style.display = "none";
+      }
+    };
+
+    function showYouTubeSuggestionsModal() {
+      document.getElementById("youtubeModal").style.display = "block";
+    }
+  </script>
+</body>
+</html>
 
