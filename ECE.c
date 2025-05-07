@@ -137,4 +137,103 @@
       </ul>
     </div>
   </div>
+ <script>
+    const topicDetails = {
+      "Signals and Systems": "Continuous and discrete signals, Fourier series, Laplace and Z-transform.",
+      "Network Analysis": "Kirchhoff laws, Thevenin's and Norton's theorems, AC/DC analysis.",
+      "Electronic Devices": "Diodes, BJTs, FETs, and their applications.",
+      "Digital Electronics": "Boolean algebra, logic gates, flip-flops, counters, and memory.",
+      "Control Systems": "Feedback, stability, time and frequency domain analysis.",
+      "Electromagnetic Fields": "Maxwell's equations, transmission lines, waveguides.",
+      "Analog Circuits": "Amplifiers, Op-Amps, filters, oscillators.",
+      "Microprocessors and Microcontrollers": "8085/8086 architecture, instruction sets, interfacing.",
+      "Communication Systems": "Modulation techniques, noise, transmission media.",
+      "Digital Signal Processing": "Discrete Fourier Transform, FFT, filters, convolution.",
+      "VLSI Design": "MOSFETs, CMOS design, layout and fabrication.",
+      "Embedded Systems": "ARM architecture, real-time OS, interfacing.",
+      "Antenna and Wave Propagation": "Antenna types, radiation pattern, Friis equation.",
+      "Wireless Communication": "Cellular concepts, modulation, 4G/5G basics.",
+      "Internet of Things": "IoT protocols, sensors, cloud integration."
+    };
+
+    const referenceNotes = {
+      "Signals and Systems": "Reference: Oppenheim's Signals & Systems, NPTEL lectures.",
+      "Microprocessors and Microcontrollers": "Use Mazidi’s 8051 book, Neso Academy videos.",
+      "Digital Signal Processing": "Book by Proakis & Manolakis, YouTube: NPTEL ECE.",
+      "Communication Systems": "Simon Haykin’s book, Ekeeda & Gate Smashers YouTube.",
+      "VLSI Design": "Neil H. Weste book, NPTEL lectures, VLSI Academy YouTube."
+    };
+
+    const studyPlan = {
+      "Semester 1": ["Signals and Systems", "Network Analysis", "Electronic Devices"],
+      "Semester 2": ["Digital Electronics", "Control Systems", "Electromagnetic Fields"],
+      "Semester 3": ["Analog Circuits", "Microprocessors and Microcontrollers", "Communication Systems"],
+      "Semester 4": ["Digital Signal Processing", "VLSI Design", "Embedded Systems"],
+      "Semester 5": ["Antenna and Wave Propagation", "Wireless Communication", "Internet of Things"],
+      "Semester 6": ["Digital Image Processing", "Optical Communication", "Power Electronics"],
+      "Semester 7": ["Radar Systems", "Advanced Embedded Systems", "Machine Learning for ECE"],
+      "Semester 8": ["Project Work", "Internship", "Seminar"]
+    };
+
+    const container = document.getElementById("studyPlan");
+
+    for (let semester in studyPlan) {
+      const table = document.createElement("table");
+      const thead = document.createElement("thead");
+      thead.innerHTML = `<tr><th colspan="3">${semester}</th></tr><tr><th>Done</th><th>Topic</th><th>Brief Concept</th></tr>`;
+      table.appendChild(thead);
+
+      const tbody = document.createElement("tbody");
+      studyPlan[semester].forEach(topic => {
+        const tr = document.createElement("tr");
+
+        const tdCheck = document.createElement("td");
+        const checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.id = topic;
+        tdCheck.appendChild(checkbox);
+
+        const tdTopic = document.createElement("td");
+        const label = document.createElement("label");
+        label.htmlFor = topic;
+        label.innerText = topic;
+        tdTopic.appendChild(label);
+
+        const tdDetail = document.createElement("td");
+        const link = document.createElement("span");
+        link.className = "detail-link";
+        link.innerText = topicDetails[topic] || "Details coming soon.";
+        link.onclick = () => {
+          document.getElementById("modalTitle").innerText = topic;
+          document.getElementById("modalContent").innerText = referenceNotes[topic] || "Detailed explanation and reference notes coming soon.";
+          document.getElementById("conceptModal").style.display = "block";
+        };
+        tdDetail.appendChild(link);
+
+        tr.appendChild(tdCheck);
+        tr.appendChild(tdTopic);
+        tr.appendChild(tdDetail);
+
+        tbody.appendChild(tr);
+      });
+
+      table.appendChild(tbody);
+      container.appendChild(table);
+    }
+
+    window.onclick = function(event) {
+      const modals = [document.getElementById("conceptModal"), document.getElementById("youtubeModal")];
+      modals.forEach(modal => {
+        if (event.target === modal) {
+          modal.style.display = "none";
+        }
+      });
+    };
+
+    function showYouTubeSuggestions() {
+      document.getElementById("youtubeModal").style.display = "block";
+    }
+  </script>
+</body>
+</html>
 
