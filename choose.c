@@ -93,6 +93,7 @@ select {
 function selectCourse(course) {
       if (course) {
         selectedCourseDiv.textContent = `You selected: ${course}`;
+	ug3edih4rocju4r;lcki;p
         backButton.style.display = 'inline';
       } else {
         selectedCourseDiv.textContent = '';
