@@ -85,7 +85,9 @@ select {
     </select>
      <div class="selected-course" id="selectedCourse"></div>
   </div>
+  jbrfjht4rovj;gkjvlkiernhjbhjmbgdcfuhr4togj;t5oj
 <script>
+hjgfrvich;gtovj;otvkjb;ogt5vj
     const backButton = document.getElementById('backButton');
     const courseDropdown = document.getElementById('courseDropdown');
     const selectedCourseDiv = document.getElementById('selectedCourse');
@@ -93,10 +95,11 @@ select {
 function selectCourse(course) {
       if (course) {
         selectedCourseDiv.textContent = `You selected: ${course}`;
+	ug3edih4rocju4r;lcki;p
         backButton.style.display = 'inline';
       } else {
         selectedCourseDiv.textContent = '';
-        backButton.style.display = 'none';
+        
       }
     }
 
