@@ -86,6 +86,7 @@ select {
      <div class="selected-course" id="selectedCourse"></div>
   </div>
 <script>
+hjgfrvich;gtovj;otvkjb;ogt5vj
     const backButton = document.getElementById('backButton');
     const courseDropdown = document.getElementById('courseDropdown');
     const selectedCourseDiv = document.getElementById('selectedCourse');
