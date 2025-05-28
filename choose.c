@@ -85,6 +85,7 @@ select {
     </select>
      <div class="selected-course" id="selectedCourse"></div>
   </div>
+  jbrfjht4rovj;gkjvlkiernhjbhjmbgdcfuhr4togj;t5oj
 <script>
 hjgfrvich;gtovj;otvkjb;ogt5vj
     const backButton = document.getElementById('backButton');
