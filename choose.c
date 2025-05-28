@@ -96,7 +96,7 @@ function selectCourse(course) {
         backButton.style.display = 'inline';
       } else {
         selectedCourseDiv.textContent = '';
-        backButton.style.display = 'none';
+        
       }
     }
 
